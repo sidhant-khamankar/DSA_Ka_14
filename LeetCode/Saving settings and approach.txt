@@ -1,0 +1,30 @@
+VS Code Leetcode Extension Settings cpp default language choose default folder and saving settings as
+
+    "leetcode.filePath": {
+
+
+        "default": {
+            "folder": "${tag}_${difficulty}",
+            "filename": "${id}_${snake_case_name}-${company}.${ext}"
+        }
+    },
+
+dont set default language 
+
+
+In my Submissions or Retrive last submitted code
+
+Question maybe premium
+First decide time and space complexity by seeing constraints (see interview tips) then 
+code yourself judge time and space complexity  and try to improve as per follow up then see 
+better solution in discussion or solutions(maybe premium), other video or article
+code after knowing the algo and then
+write all approaches snippet with time and space in note 
+
+you can write custom test cases instead of default test case
+for numbers directly input
+for string input use ""..."" e.g ""abc""
+
+
+
+

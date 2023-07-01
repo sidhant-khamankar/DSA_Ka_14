@@ -1,0 +1,91 @@
+/*
+ * @lc app=leetcode id=38 lang=cpp
+ *
+ * [38] Count and Say
+ */
+
+// @lc code=start
+
+class Solution
+{
+public:
+    //code library gfg solution
+    // string countnndSay(int n)
+    // {
+    //     // Base cases
+    //     if (n == 1)
+    //         return "1";
+    //     if (n == 2)
+    //         return "11";
+
+    //     // Find n'th term by generating all terms from 3 to
+    //     // n-1.  Every term is generated using previous term
+    //     string str = "11"; // Initialize previous term
+    //     for (int i = 3; i <= n; i++)
+    //     {
+    //         // In below for loop, previous character
+    //         // is processed in current iteration. That
+    //         // is why a dummy character is added to make
+    //         // sure that loop runs one extra iteration.
+    //         str += '$';
+    //         int len = str.length();
+
+    //         int cnt = 1;     // Initialize count of matching chars
+    //         string tmp = ""; // Initialize i'th term in series
+
+    //         // Process previous term to find the next term
+    //         for (int j = 1; j < len; j++)
+    //         {
+    //             // If current character does't match
+    //             if (str[j] != str[j - 1])
+    //             {
+    //                 // Append count of str[j-1] to temp
+    //                 tmp += cnt + '0';
+
+    //                 // Append str[j-1]
+    //                 tmp += str[j - 1];
+
+    //                 // Reset count
+    //                 cnt = 1;
+    //             }
+
+    //             //  If matches, then increment count of matching
+    //             // characters
+    //             else
+    //                 cnt++;
+    //         }
+
+    //         // Update str
+    //         str = tmp;
+    //     }
+
+    //     return str;
+    // }
+
+    // My solution On^2 time On space
+    string countAndSay(int n)
+    {
+        vector<string> digstrs;
+        digstrs.push_back("1");
+
+        for (int i = 2; i <= n; i++)
+        {
+            string say = digstrs[i - 2];
+            string subdig;
+            for (int j = 0; j < say.size(); j++)
+            {
+                int count = 1;
+                while (j + 1 < say.size() && say[j] == say[j + 1])
+                {
+                    count++;
+                    j++;
+                }
+                subdig.push_back(count + '0');
+                subdig.push_back(say[j]);
+            }
+            digstrs.push_back(subdig);
+        }
+        return digstrs[n - 1];
+    }
+};
+// @lc code=end
