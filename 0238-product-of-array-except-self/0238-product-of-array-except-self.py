@@ -4,6 +4,7 @@ class Solution:
         
         # Approach 2 Neetcode - Postfix Aand prefix array calculated and then multiplied
         # Can skip postfix and prefix array by putting prefix result in output array at one index greater than current index. 
+        # O(n) time O(1) space
         
         res = [1] * len(nums)
         
