@@ -2,6 +2,11 @@ class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         
         # O(n) time O(1) space
+        # drop duplicates
+        # sort
+        # check for consecutiveness
+        # if consicutiveness breaks or it is last second element, then update maxi
+        
         nums = list(set(nums))
         if len(nums) == 0:
             return 0
@@ -22,6 +27,3 @@ class Solution:
                 curr = 1
         
         return maxi
-    
-    # 0, 1, 1, 2
-    # 2
