@@ -1,4 +1,4 @@
-# My solution O(n^2) time O(n) space
+# My solution O(n) time O(n) space like neetcode solution
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         ans = [None]*len(temperatures)
