@@ -1,3 +1,12 @@
+# Neetcode, Leetcode solution
+​
+```
+/*
+* @lc app=leetcode id=981 lang=cpp
+*
+* [981] Time Based Key-Value Store
+*/
+​
 // @lc code=start
 class TimeMap
 {
@@ -37,25 +46,3 @@ int mid = low + (high - low) / 2;
 if (m[key][mid].first <= timestamp)
 {
 res = m[key][mid].second;
-low = mid + 1;
-}
-else
-{
-high = mid - 1;
-}
-}
-​
-return res;
-}
-};
-​
-/**
-* Your TimeMap object will be instantiated and called as such:
-* TimeMap* obj = new TimeMap();
-* obj->set(key,value,timestamp);
-* string param_2 = obj->get(key,timestamp);
-*/
-// @lc code=end
-​
-```
-​
