@@ -13,7 +13,7 @@ class TimeMap:
 
     def get(self, key: str, timestamp: int) -> str:
         
-        
+        # Edge case when timestamp is small than first timestamp
         if len(self.ds[key]) == 0 or timestamp < list(self.ds[key][0].keys())[0]:
             return ""
         
@@ -32,6 +32,7 @@ class TimeMap:
             else:
                 h = mid - 1
         
+        # edge case when mid points to higher element than target after binary search
         if list(self.ds[key][mid].keys())[0] > timestamp:
             mid -= 1
         return list(self.ds[key][mid].values())[0]
