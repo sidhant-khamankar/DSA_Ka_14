@@ -5,38 +5,55 @@
 #         self.left = None
 #         self.right = None
 
-# My solution naive
-# On time On space
+
+# neetcode solution
+# Oheight time O1 space
 
 class Solution:
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        path = []
-        
-        def dfs(node, search_node):
-            if not node:
-                return
-            nonlocal path
-            path.append(node)
-            if node.val == search_node.val:
-                return
-            elif search_node.val < node.val:
-                path.append(node)
-                dfs(node.left, search_node)
+    def lowestCommonAncestor(
+        self, root: "TreeNode", p: "TreeNode", q: "TreeNode"
+    ) -> "TreeNode":
+        while True:
+            if root.val < p.val and root.val < q.val:
+                root = root.right
+            elif root.val > p.val and root.val > q.val:
+                root = root.left
             else:
-                dfs(node.right, search_node)
+                return root
+
+
+# My solution naive
+# Oheight time Oheight + recursion space
+
+# class Solution:
+#     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+#         path = []
         
-        dfs(root, p)
-        path_to_p = path
-        path = []
-        dfs(root, q)
-        path_to_q = path
+#         def dfs(node, search_node):
+#             if not node:
+#                 return
+#             nonlocal path
+#             path.append(node)
+#             if node.val == search_node.val:
+#                 return
+#             elif search_node.val < node.val:
+#                 path.append(node)
+#                 dfs(node.left, search_node)
+#             else:
+#                 dfs(node.right, search_node)
         
-        i = 0
-        j = 0
-        while i < len(path_to_p) and j < len(path_to_q) and path_to_p[i] == path_to_q[j]:
+#         dfs(root, p)
+#         path_to_p = path
+#         path = []
+#         dfs(root, q)
+#         path_to_q = path
+        
+#         i = 0
+#         j = 0
+#         while i < len(path_to_p) and j < len(path_to_q) and path_to_p[i] == path_to_q[j]:
             
-            i += 1
-            j += 1
+#             i += 1
+#             j += 1
             
-        return path_to_p[i-1]
+#         return path_to_p[i-1]
         
