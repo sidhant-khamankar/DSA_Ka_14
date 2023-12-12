@@ -6,7 +6,7 @@
 #         self.right = right
 
 # neetcode solution like my solution
-# On time On recursion space
+# On time On recursion space without using non local variable
 
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
