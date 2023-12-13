@@ -12,6 +12,7 @@
 # neetcode solution
 # On time On recursion space
 # pass left and right constraints for each binary search tree node
+
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
         def valid(node, left, right):
